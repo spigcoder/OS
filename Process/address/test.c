@@ -44,11 +44,18 @@ void test_virtual_address(){
 	}
 }
 
+void test_only_read_string(){
+	//因为tmp指向的是字符串常量区的地址，而这个地址是只读的所以编译时不会报错，但是运行时会出现段错误
+	char* tmp = "Hello spigcoder";
+	*tmp = 'H';
+}
+
 int main(){
 	//验证各个空间的地址的关系
 	//test_address();
 	//验证虚拟地址的存在
 	//test_virtual_address();
-	
+	//验证字符串常量区拥有只读属性
+	//test_only_read_string();	
 	return 0;
 }
