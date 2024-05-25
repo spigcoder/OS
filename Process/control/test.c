@@ -47,7 +47,7 @@ void test_return(){
 }
 
 int main(){
-	//test_fork();
-	test_return();
+	test_fork();
+	//test_return();
 	return 0;
 }
