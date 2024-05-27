@@ -93,7 +93,6 @@ void test_for_OneProcess_waitpid(){
 			//非阻塞巡回
 			printf("我还在等待\n");	
 		}
-		sleep(2);
 	}
 }
 
