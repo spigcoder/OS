@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<stdbool.h>
+#include <sys/types.h>
 
 int init_val1;
 int init_val2 = 100;
