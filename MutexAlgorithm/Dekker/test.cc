@@ -11,7 +11,8 @@ void* P0(void *args){
     while(true){
         //表明P0要进入临界区
         flag[0] = true;
-        while(flag[1]){     //如果flag[0] = false表明P1还未进入临界区，他也进不来，那么P0就可以进入
+         //如果flag[0] = false表明P1还未进入临界区，他也进不来，那么P0就可以进入
+        while(flag[1]){    
             //走到这里就表明P1也进入了这个缓冲区
             //如果turn == 0那么证明这次该我进入缓冲区，只要继续检查flag[1]的值，等待他将资源进行释放
             if(turn == 1){
