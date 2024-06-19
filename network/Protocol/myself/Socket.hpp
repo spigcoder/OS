@@ -15,6 +15,7 @@ const string IP = "0.0.0.0";
 enum{
     SOCKFAIL = 1,
     BINDFAIL,
+    CLOSEFAIL,
     LISTENFAIL,
     ACCEPTFAIL,
     CONNECTFAIL,
@@ -87,7 +88,11 @@ public:
     }
 
     void Close(){
-        close(_sock);
+        int n = close(_sock);
+        if(n < 0){
+            perror("close fail: ");
+            exit(CLOSEFAIL);
+        }
     }
 
 private:
