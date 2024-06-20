@@ -33,7 +33,6 @@ public:
     }
     //init 使初始化sockaddr_in
     void Init(sockaddr_in& so_addr){
-        memcpy(&so_addr, 0, sizeof(so_addr));
         so_addr.sin_family = AF_INET;
         so_addr.sin_port = _port; 
         inet_aton(_ip.c_str(), &(so_addr.sin_addr));

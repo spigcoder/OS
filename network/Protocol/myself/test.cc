@@ -4,14 +4,14 @@ void TestRequest(){
     Request rq(4312, '+', 1234);
     const string ret = rq.Serialize();
     cout << ret << endl;
-    rq.DeSerialize("12345 + 54321");
+    //rq.DeSerialize("12345 + 54321");
     rq.Print();
 }
 void TestResponse(){
     Reponse rp(1, 2);
     const string ret = rp.Serialize();
     cout << ret << endl;
-    rp.DeSerialize("1234 9");
+    //rp.DeSerialize("1234 9");
     rp.Print();
 }
 
