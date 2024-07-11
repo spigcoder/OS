@@ -165,11 +165,8 @@ public:
 
     void Start(){
         //首先进行接听操作        
-        cout << "get start" << endl;
-        int n = _listen_socket.Bind();
-        if(n) cout << "bind sucess" << endl;
-        n = _listen_socket.Listen();
-        if(n) cout << "listen sucess" << endl;
+        _listen_socket.Bind();
+        _listen_socket.Listen();
         uint16_t client_port;
         string client_ip;
         while(true){
@@ -178,7 +175,7 @@ public:
                 perror("accept fail: ");
                 continue;
             }
-            cout << "get accept from" << client_ip << endl;
+            cout << "get a new sock_fd: " << sock_fd << endl;
             //读取到了请求的信息，可以创建新线程来进行网页处理操作
             pthread_t pid;
             Thread_Data* data = new Thread_Data(this, sock_fd);
